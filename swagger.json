@@ -1,0 +1,363 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "",
+      "version": "2",
+      "title": "Bank"
+    },
+    "host": "localhost:6060",
+    "tags": [
+      {
+        "name": "bank"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/deposit": {
+        "post": {
+          "tags": [
+            "bank"
+          ],
+          "summary": "deposit",
+          "description": "deposit your account",
+          "operationId": "deposit your account",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "formData",
+              "description": "account number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "description": "password account",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "deposit",
+              "in": "formData",
+              "description": "deposit account",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success to deposit",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success to deposit your Your deposit is 300"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 400
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Bad Request"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "unAuthenticate",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "fail connect database"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/withdraw": {
+        "post": {
+          "tags": [
+            "bank"
+          ],
+          "summary": "withdraw",
+          "description": "withdraw your account",
+          "operationId": "withdraw your account",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "formData",
+              "description": "account number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "description": "password account",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "withdraw",
+              "in": "formData",
+              "description": "withdraw money(bath)",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success to withdraw",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success to withdraw your Your deposit is 300"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 400
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Bad Request"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "unAuthenticate",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "fail connect database"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/transfer": {
+        "post": {
+          "tags": [
+            "bank"
+          ],
+          "summary": "transfer",
+          "description": "transfer your account",
+          "operationId": "transfer your account",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "formData",
+              "description": "account number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "description": "password account",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "transfer",
+              "in": "formData",
+              "description": "transfer money(bath)",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "other_account",
+              "in": "formData",
+              "description": "account number to send",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success to transfer",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success to withdraw yourYour transfer is 300 to account 3"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 400
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Bad Request"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "unAuthenticate",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "fail connect database"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/balance": {
+        "post": {
+          "tags": [
+            "bank"
+          ],
+          "summary": "balance",
+          "description": "balance your account",
+          "operationId": "balance your account",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "formData",
+              "description": "account number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "description": "password account",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success to balance",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Your balance is 500"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 400
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Bad Request"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "unAuthenticate",
+              "schema": {
+                "properties": {
+                  "statusCode": {
+                    "type": "string",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "fail connect database"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
